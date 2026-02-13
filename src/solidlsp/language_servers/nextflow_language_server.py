@@ -261,6 +261,9 @@ class NextflowLanguageServer(SolidLanguageServer):
         init_response = self.server.send.initialize(initialize_params)
 
         capabilities = init_response["capabilities"]
+    
+        print(capabilites)
+
         assert "textDocumentSync" in capabilities, "Server must support textDocumentSync"
         assert "hoverProvider" in capabilities, "Server must support hover"
         assert "completionProvider" in capabilities, "Server must support code completion"
