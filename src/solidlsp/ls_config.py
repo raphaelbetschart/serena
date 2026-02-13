@@ -426,6 +426,10 @@ class Language(str, Enum):
                 from solidlsp.language_servers.groovy_language_server import GroovyLanguageServer
 
                 return GroovyLanguageServer
+            case self.NEXTFLOW:
+                from from solidlsp.language_servers.nextflow_language_server import NextflowLanguageServer
+
+                return NextflowLanguageServer
             case self.MATLAB:
                 from solidlsp.language_servers.matlab_language_server import MatlabLanguageServer
 
