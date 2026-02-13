@@ -427,7 +427,7 @@ class Language(str, Enum):
 
                 return GroovyLanguageServer
             case self.NEXTFLOW:
-                from from solidlsp.language_servers.nextflow_language_server import NextflowLanguageServer
+                from solidlsp.language_servers.nextflow_language_server import NextflowLanguageServer
 
                 return NextflowLanguageServer
             case self.MATLAB:
