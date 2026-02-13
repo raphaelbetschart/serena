@@ -63,6 +63,7 @@ class Language(str, Enum):
     FORTRAN = "fortran"
     HASKELL = "haskell"
     GROOVY = "groovy"
+    NEXTFLOW = "nextflow"
     VUE = "vue"
     POWERSHELL = "powershell"
     PASCAL = "pascal"
@@ -244,6 +245,8 @@ class Language(str, Enum):
                 return FilenameMatcher("*.pas", "*.pp", "*.lpr", "*.dpr", "*.dpk", "*.inc")
             case self.GROOVY:
                 return FilenameMatcher("*.groovy", "*.gvy")
+            case self.NEXTFLOW:
+                return FilenameMatcher("*.nf", "*.nf.test")
             case self.MATLAB:
                 return FilenameMatcher("*.m", "*.mlx", "*.mlapp")
             case _:
