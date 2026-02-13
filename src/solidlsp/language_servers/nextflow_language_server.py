@@ -262,15 +262,18 @@ class NextflowLanguageServer(SolidLanguageServer):
 
         capabilities = init_response["capabilities"]
     
-        print(capabilities)
-
         assert "textDocumentSync" in capabilities, "Server must support textDocumentSync"
         assert "hoverProvider" in capabilities, "Server must support hover"
         assert "completionProvider" in capabilities, "Server must support code completion"
-        assert "signatureHelpProvider" in capabilities, "Server must support signature help"
         assert "definitionProvider" in capabilities, "Server must support go to definition"
         assert "referencesProvider" in capabilities, "Server must support find references"
         assert "documentSymbolProvider" in capabilities, "Server must support document symbols"
         assert "workspaceSymbolProvider" in capabilities, "Server must support workspace symbols"
+        assert "documentFormattingProvider" in capabilities, "Server must support document formatting"
+        assert "renameProvider" in capabilities, "Server must support file renaming"
+        assert "documentLinkProvider" in capabilities, "Server must support document linking"
+        assert "executeCommandProvider" in capabilities, "Server must support executing commands"
+        assert "callHierarchyProvider" in capabilities, "Server must support call hierarchy"
+
 
         self.server.notify.initialized({})
